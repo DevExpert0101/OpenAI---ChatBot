@@ -1,0 +1,25 @@
+{% load static %}
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    </head>
+    <body>
+        <h1>Welcome to customer page</h1>
+        <h3>Please register </h3>
+        
+        
+        <form id="registerForm">
+            UserName : <input type="text" name="name" placeholder="Enter the name" required\><br>
+            email : <input type="text" name="email" placeholder="Enter the email" required \><br>
+            password : <input type="password" name="password" placeholder="Enter the password" required\><br>
+            Confirm_password : <input type="password" name="confirm_password" placeholder="Enter the confirm_password" required\><br>
+            Mobile : <input type="number" name="mobile" placeholder="Enter the mobile number" required \><br>
+            <input type="submit"  name="submit-form">
+        </form>
+        <p id="register-success"></p><br>
+        <span><a href="{% url 'login' %}">Login</a></span>
+
+        <script type="text/javascript" src="{% static 'js/signup.js' %}"></script>
+    </body>
+</html>

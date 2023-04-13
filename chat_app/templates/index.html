@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" media="screen" href="{% static 'css/main.css' %}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<html>
+    <body>
+        <div class="col-sm-3 col-sm-offset-4 frame">
+            <p style="text-align: center;"><a href="{% url 'logout' %}"><button >Logout</button></a></p>
+            <div class="main-chat" id="main-chat">
+                <div class="chatTitle">
+                    <p><b>Chat Room</b></p>
+                </div>
+                <hr>
+                {% if chats %}
+                {% for chat in chats %}
+                <div>
+                    <p class="left-chat">{{chat.author_request}}</p>
+                </div>
+                <div>
+                    <p class="right-chat">{{chat.author_response}}</p>
+                </div>
+                {% endfor %}
+                {% endif %}
+                
+                    
+            </div>
+            <ul></ul>
+            <div>
+                <div class="msj-rta macro">                        
+                    <div class="chatInput" style="background:whitesmoke !important;">
+                        <input class="inputfield" id="message" name="message" placeholder="Type a message"/>
+                        <button class="btn" id="send-msg" type="submit">Send</button>
+                        
+                    </div> 
+                    
+
+                </div>
+                <div style="padding:10px;">
+                    <span class="glyphicon glyphicon-share-alt"></span>
+                </div>                
+            </div>
+        </div> 
+        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>  
+    </body>
+</html>

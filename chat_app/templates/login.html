@@ -1,0 +1,21 @@
+<html>
+    <body>
+    <h1>Welcome to login page</h1>
+    {% if error %}
+    {% for err in error%}
+    <div class="alert alert-danger" role="alert">
+        {{err}}
+    </div>
+    {% endfor %}
+
+    {% endif %}
+
+    <p>Don't have an Please create<span><a href="{% url 'signup' %}">Sign up</a></span></p>
+
+    <form method="POST" action="/login/">
+        email: <input type="text" id="username" name="username" placeholder="Enter Email Here">
+        password: <input type="password" id="password" name="password" placeholder="Enter Password Here">
+        <input type="submit" name="login-submit">
+    </form>
+</body>
+</html>
